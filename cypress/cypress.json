@@ -1,0 +1,22 @@
+{
+  "defaultCommandTimeout": 10000,
+  "chromeWebSecurity": false,
+  "reporter": "cypress-multi-reporters",
+  "screenshotsFolder": "cypress/reports/mochareports",
+  "reporterOptions": {
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "reportDir": "cypress/reports/mocha",
+      "quite": true,
+      "overwrite": false,
+      "html": false,
+      "json": true
+    }
+  },
+  "baseUrl": "https://novoportal-dev.auttar.com.br/",
+  "env": {
+    "auth_base_url": "https://getsso-dev.getnet.com.br",
+    "auth_realm": "AUTTAR_PA_EXT",
+    "auth_client_id": "client-portal"
+  }
+}
