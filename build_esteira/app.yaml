@@ -1,6 +1,6 @@
 app:
-  product: "portal-auttar"
-  name: "automacao-conciliador-esteira"
+  product: "auttar-portal-cliente"
+  name: "customer-portal-test-e2e"
   baseVersion: "0.0"
   tecnology: "cypress"
   repositoryType: "app"
