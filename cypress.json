@@ -1,7 +1,7 @@
 {
     "defaultCommandTimeout": 10000,
     "chromeWebSecurity": false,
-    "reporter": "mochawesome",
+    "reporter": "cypress-multi-reporters",
     "screenshotsFolder": "cypress/reports/mochareports",
     "reporterOptions": {
       "reporterEnabled": "mochawesome",
@@ -9,7 +9,7 @@
         "reportDir": "cypress/reports/mocha",
         "quite": true,
         "overwrite": false,
-        "html": true,
+        "html": false,
         "json": true
       }
     },
