@@ -1,0 +1,10 @@
+app:
+  product: "portal-auttar"
+  name: "automacao-conciliador-esteira"
+  baseVersion: "0.0"
+  tecnology: "cypress"
+  repositoryType: "app"
+  functionalTestingTool: "cypress"
+  skip_versioning: "false"
+  notificationType: "mail"
+  mailTo: ""

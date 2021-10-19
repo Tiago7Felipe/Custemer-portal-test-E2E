@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-19T13:21:42.779Z",
+    "end": "2021-10-19T13:22:41.629Z",
+    "duration": 58850,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "336e88ed-88a0-42d1-9a0c-b064ae1f11ed",
+      "title": "",
+      "fullFile": "cypress/integration/Login.js",
+      "file": "cypress/integration/Login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4ce945a4-d083-46d3-8903-35f755ca9923",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar campos para login",
+              "fullTitle": "Login Validar campos para login",
+              "timedOut": null,
+              "duration": 9735,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('');\ncy.get('#textFieldLogin').should('contain', 'Usuário ou E-mail');\ncy.get('#textFieldPassword').should('contain', 'Senha');\ncy.get('#submit').should('contain', 'Entrar');\ncy.get('.btn--basic').should('contain', 'Esqueci minha senha');",
+              "err": {},
+              "uuid": "b5cb6081-df7c-484b-89b1-4fd49d0e45eb",
+              "parentUUID": "4ce945a4-d083-46d3-8903-35f755ca9923",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar Login com a senha Inválida",
+              "fullTitle": "Login Validar Login com a senha Inválida",
+              "timedOut": null,
+              "duration": 13180,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.Login(login.email, login.passwordInvalida); //validando mensagem de erro\ncy.get('.alert-information').should('contain', 'Usuário ou Senha inválidos');",
+              "err": {},
+              "uuid": "7e04448f-21c6-4c19-bffb-3bfcc6aa891a",
+              "parentUUID": "4ce945a4-d083-46d3-8903-35f755ca9923",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar Login com email inválido",
+              "fullTitle": "Login Validar Login com email inválido",
+              "timedOut": null,
+              "duration": 13220,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.Login(login.emailInvalido, login.password); //validando mensagem de erro\ncy.get('.alert-information').should('contain', 'Usuário ou Senha inválidos');",
+              "err": {},
+              "uuid": "a360d8f9-ac6f-4dbb-9790-f628ba770626",
+              "parentUUID": "4ce945a4-d083-46d3-8903-35f755ca9923",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar login com sucesso",
+              "fullTitle": "Login Validar login com sucesso",
+              "timedOut": null,
+              "duration": 22476,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.Login(login.email, login.password); //validar login\ncy.get('#meu_perfil > :nth-child(1) > small').should('contain', 'client.portal.gtcom+28@gmail.com');\ncy.get('.page-header__title').should('contain', 'Olá'); //logout\ncy.Logout();",
+              "err": {},
+              "uuid": "00c43283-6c27-4e69-ba16-2319793e7313",
+              "parentUUID": "4ce945a4-d083-46d3-8903-35f755ca9923",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b5cb6081-df7c-484b-89b1-4fd49d0e45eb",
+            "7e04448f-21c6-4c19-bffb-3bfcc6aa891a",
+            "a360d8f9-ac6f-4dbb-9790-f628ba770626",
+            "00c43283-6c27-4e69-ba16-2319793e7313"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 58611,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+          "reportDir": "cypress/reports/mocha",
+          "quite": true,
+          "overwrite": false,
+          "html": true,
+          "json": true
+        }
+      },
+      "version": "5.2.0"
+    }
+  }
+}

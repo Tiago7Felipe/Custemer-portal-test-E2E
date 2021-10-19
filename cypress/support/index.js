@@ -14,16 +14,18 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import "./commands";
-import addContext from "mochawesome/addContext";
+import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-//se o teste falhar, adiciona o print gerado automaticamente
-Cypress.on("test:after:run", (test, runnable) => {
-  if (test.state === "failed") {
-    const screenshot = `${Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`;
-    addContext({ test }, screenshot);
-  }
-});
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err) {
+        // tslint:disable: no-console
+        console.log('error', err)
+        console.log('runnable', runnable)
+    }
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+})
